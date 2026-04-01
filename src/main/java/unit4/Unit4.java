@@ -55,7 +55,14 @@ public class Unit4 {
      */
     public String repeatString(String str, int n) {
         // TODO: Implement this method
-        return "";
+        String l = "";
+        String ifEmpty = "";
+        if(n>0&&str!=""){
+        for(int i = 0; i < n; i++){
+         l += str;
+        }
+        }
+        return l;
     }
 
     /**
@@ -78,8 +85,11 @@ public class Unit4 {
      * @return the factorial of n
      */
     public int findFactorial(int n) {
-        // TODO: Implement this method
-        return 0;
+        int total =1;
+       for( int i =1; i < n; i ++){
+        total*=i;
+       }
+        return total;
     }
 
     /**
@@ -102,8 +112,15 @@ public class Unit4 {
      * @return the number of vowels found
      */
     public int countVowels(String str) {
-        // TODO: Implement this method
-        return 0;
+        int count = 0;
+        String lowerStr = str.toLowerCase();
+        for(int i = 0; i < lowerStr.length();i++){
+            char ch = lowerStr.charAt(i);
+            if(ch == 'a'||ch == 'e' || ch == 'i'||ch == 'o'||ch == 'u'){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -129,8 +146,16 @@ public class Unit4 {
      * @return true if the string is a palindrome, false otherwise
      */
     public boolean isPalindrome(String str) {
-        // TODO: Implement this method
-        return false;
+        int left = 0;
+        int right = str.length()-1;
+        while(left<right){
+            if(str.charAt(left)!=str.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 
     /**
@@ -160,8 +185,27 @@ public class Unit4 {
      * @param n the size parameter for the patterns
      */
     public void printAsteriskPatterns(int n) {
-        // TODO: Implement this method
-    }
+        for(int i = 0; i < n; i++){
+            System.out.print("*");
+        }
+            System.out.print("\n\n");
+            
+            for(int i = 0; i < n;i++){
+                for(int j = 0; j < n;j++){
+                    System.out.print("*");
+                }
+                System.out.print("\n");
+            }
+            System.out.print("\n");
+
+            for(int i = 1; i <=n; i++){
+                for(int j = 0; j < i; j++){
+                    System.out.print("*");
+                }
+                System.out.print("\n");
+            }
+
+        }
 
     /**
      * Prints a multiplication table from 1x1 up to nxn.
@@ -184,6 +228,11 @@ public class Unit4 {
      * @param n the size of the table (n x n)
      */
     public void multiplicationTable(int n) {
-        // TODO: Implement this method
+        for( int row = 1; row<=n; row++){
+            for(int col = 1; col <=n; col++){
+                System.out.print((row*col)+"\t");
+            }
+            System.out.print("\n");
+        }
     }
 }
